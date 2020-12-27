@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/demo.css "%}">
+    <title></title>
+  </head>
+  <body>
+    <h1> Banglore Jobs Information </h1>
+    <img src="{% static "images/bng1.jpg "%}" alt="">
+    <img src="{% static "images/bng2.jpg "%}" alt="">
+
+    <hr>
+    {% if jobs_list %}
+    <table id='tab'>
+      <thead>
+        <th>Date</th>
+        <th>Company</th>
+        <th>Title</th>
+        <th>Eligibility</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </thead>
+      {%for job in jobs_list %}
+      <tr>
+        <td>{{job.Date}}</td>
+        <td>{{job.Company}}</td>
+        <td>{{job.Tittle}}</td>
+        <td>{{job.Eligibility}}</td>
+        <td>{{job.Address}}</td>
+        <td>{{job.Email}}</td>
+        <td>{{job.PhoneNO}}</td>
+      </tr>
+
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No Jobs Found in Bangalore</p>
+  {% endif %}
+</body>
+</html>
+
+  </body>
+</html>
